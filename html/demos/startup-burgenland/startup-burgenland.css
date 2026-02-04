@@ -360,6 +360,43 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
 }
 
+/* Funding cards - responsive font size and centering */
+.bg-gradient-sb .bg-white {
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-gradient-sb .bg-white .fs-45,
+section.bg-gradient-sb .fs-45 {
+    font-size: 2rem !important;
+    white-space: nowrap;
+    text-align: center !important;
+    width: 100%;
+}
+
+.bg-gradient-sb .bg-white h5,
+.bg-gradient-sb .bg-white p {
+    text-align: center !important;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .bg-gradient-sb .bg-white .fs-45,
+    section.bg-gradient-sb .fs-45 {
+        font-size: 2.25rem !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bg-gradient-sb .bg-white .fs-45,
+    section.bg-gradient-sb .fs-45 {
+        font-size: 2.5rem !important;
+    }
+}
+
 /* Prevent word breaks in lists and card content */
 .list-style-02 li,
 .bg-white li,
@@ -379,10 +416,13 @@ strong {
 
 /* Card content overflow fix - only for actual cards, not sections */
 .box-shadow-quadruple-large.bg-white,
-.box-shadow-quadruple-large.border-radius-6px,
-section .row .col .bg-white,
-section .row .col .bg-very-light-gray {
+.box-shadow-quadruple-large.border-radius-6px {
     overflow: hidden;
+}
+
+/* Funding cards should NOT have overflow hidden */
+.bg-gradient-sb .bg-white {
+    overflow: visible !important;
 }
 
 /* Card titles - smaller on mobile for better fit */
@@ -496,15 +536,42 @@ footer .nav-link {
     color: var(--sb-red);
 }
 
-/* Scroll progress - completely hidden to avoid glitch */
+/* Remove any background vertical lines */
+body {
+    background-image: none !important;
+}
+
+/* Scroll progress - completely hidden and removed */
 .scroll-progress,
 .scroll-progress.d-xxl-block,
 .scroll-progress.d-none.d-xxl-block,
-div.scroll-progress {
+.scroll-progress.visible,
+div.scroll-progress,
+[class*="scroll-progress"],
+[class*="scroll-line"],
+[class*="scroll-point"],
+.scroll-line,
+.scroll-point,
+.scroll-top,
+.scroll-text {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    max-width: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    transform: scale(0) !important;
+}
+
+/* Hide any fixed right-side vertical elements */
+body > div[style*="position: fixed"][style*="right"] {
+    display: none !important;
 }
 
 /* Links */
