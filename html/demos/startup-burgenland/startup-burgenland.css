@@ -811,3 +811,223 @@ header .navbar-brand img {
         letter-spacing: -3px;
     }
 }
+
+/* Mobile header fixes */
+@media (max-width: 991px) {
+    /* Reduce top space margin on mobile */
+    .ipad-top-space-margin {
+        margin-top: 70px !important;
+    }
+    
+    /* Hide Jetzt starten button on mobile */
+    header .header-button {
+        display: none !important;
+    }
+    
+    /* Keep logo and burger menu in one row */
+    header .navbar .container-fluid {
+        flex-wrap: nowrap;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    header .navbar-brand img {
+        max-height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ipad-top-space-margin {
+        margin-top: 60px !important;
+    }
+    
+    header .navbar .container-fluid {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+/* Fix headline overflow on mobile */
+@media (max-width: 575px) {
+    h1, .h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.15 !important;
+    }
+    
+    h2, .h2 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .fs-50, .fs-55, .fs-60, .fs-65, .fs-70 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .fs-40, .fs-45 {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Allow long words to break if needed */
+    h1, h2, h3, .h1, .h2, .h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    h1, .h1 {
+        font-size: 2rem !important;
+        line-height: 1.15 !important;
+    }
+    
+    h2, .h2 {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Fix mobile header layout - logo and burger on same row */
+@media (max-width: 991px) {
+    header {
+        padding: 0 !important;
+    }
+    
+    header nav.navbar {
+        padding: 10px 15px !important;
+    }
+    
+    header .navbar > .container-fluid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 !important;
+    }
+    
+    header .navbar > .container-fluid > .col-auto {
+        width: auto !important;
+        flex: 0 0 auto !important;
+        padding: 0 !important;
+    }
+    
+    /* Logo column */
+    header .navbar > .container-fluid > .col-auto:first-child {
+        order: 1;
+    }
+    
+    /* Menu column with burger */
+    header .navbar > .container-fluid > .col-auto.menu-order {
+        order: 2;
+        position: static !important;
+    }
+    
+    /* Hide the button column */
+    header .navbar > .container-fluid > .col-auto:last-child:not(.menu-order) {
+        display: none !important;
+    }
+    
+    /* Burger button positioning */
+    header .navbar-toggler {
+        float: none !important;
+        margin: 0 !important;
+        padding: 8px !important;
+    }
+    
+    /* Reduce top margin on hero section */
+    section.ipad-top-space-margin,
+    .ipad-top-space-margin {
+        margin-top: 55px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    section.ipad-top-space-margin,
+    .ipad-top-space-margin {
+        margin-top: 50px !important;
+    }
+}
+
+/* Reduce header height on mobile */
+@media (max-width: 991px) {
+    header nav.navbar {
+        padding: 5px 15px !important;
+        min-height: auto !important;
+    }
+    
+    header .navbar-brand {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    header .navbar-brand img {
+        max-height: 35px !important;
+        height: 35px !important;
+    }
+    
+    header .navbar-toggler {
+        padding: 5px !important;
+        width: 30px;
+        height: 30px;
+    }
+    
+    header .navbar-toggler-line {
+        height: 2px !important;
+        margin: 4px 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    header nav.navbar {
+        padding: 5px 10px !important;
+    }
+    
+    header .navbar-brand img {
+        max-height: 32px !important;
+        height: 32px !important;
+    }
+    
+    /* Reduce hero section top margin to match smaller header */
+    section.ipad-top-space-margin,
+    .ipad-top-space-margin {
+        margin-top: 45px !important;
+    }
+}
+
+/* Fix vertical alignment of logo and burger menu */
+@media (max-width: 991px) {
+    header .navbar > .container-fluid {
+        align-items: center !important;
+    }
+    
+    header .navbar > .container-fluid > .col-auto {
+        display: flex !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+    
+    header .navbar-brand {
+        display: flex !important;
+        align-items: center !important;
+        height: auto !important;
+        line-height: 1 !important;
+    }
+    
+    header .col-auto.menu-order {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+    }
+    
+    header .navbar-toggler {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 5px !important;
+    }
+}
