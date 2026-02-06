@@ -490,6 +490,9 @@ strong {
 
 /* Portfolio image */
 .portfolio-simple .grid-item .portfolio-image img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    width: 100%;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
